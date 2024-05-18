@@ -1,0 +1,29 @@
+@startuml
+actor "Usuario" as actorusuario
+boundary "<<Pantalla>>\nRegistrarse" as boundryPantallaDeRegistro
+
+actorusuario -> boundryPantallaDeRegistro
+activate boundryPantallaDeRegistro
+    boundryPantallaDeRegistro -> boundryPantallaDeRegistro: getRegistro()
+    activate boundryPantallaDeRegistro
+        control "RegistroController" as registroController
+            control "RegistrosModel" as registroModel
+            boundryPantallaDeRegistro -> registroController: GET api/v1/registro: registros[]
+            activate registroController
+                registroController -> registroModel: getAllregistro()
+                activate registroController
+                    database "dbveterinaria" as dbveterinaria
+                    entity registros
+                    activate registroModel
+                        activate registroModel
+                            registroModel -> dbveterinaria: SQL query
+                            dbveterinaria -> registros
+                            dbveterinaria ->registroModel: {id, nombre,apellido,cuidad,email,telefono}
+                        deactivate
+
+                    deactivate
+                deactivate
+        deactivate
+    deactivate
+deactivate
+@enduml

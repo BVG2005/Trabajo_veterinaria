@@ -1,0 +1,51 @@
+@startuml
+
+class usuario {
+    string nombre
+    string apellido
+    string cuidad
+    string email
+    string contraseña
+    int telefono
+}
+class Mascota{
+    string nombre
+    string raza
+    string especie
+    int edad
+
+}
+class citas{
+    int hora
+    int fecha
+    string motivo
+
+    
+}
+class servicio{
+    string nombre 
+    string descripcion 
+    int precio
+}
+class pago{
+    int fecha 
+    float cantidad
+    string metodo_de_pago
+
+}
+class historiaMedica{
+    int vacunas
+    string tratamiento
+    string consultas
+}
+usuario -o pago
+usuario -down-o citas
+usuario -down-o Mascota
+Mascota *- historiaMedica
+citas -o servicio
+
+
+
+
+
+@enduml

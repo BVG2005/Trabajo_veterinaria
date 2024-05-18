@@ -1,0 +1,23 @@
+
+@startuml
+
+actor Cliente as cliente
+usecase (Iniciar sesion ) as iniciarsesion
+usecase (Registrarse) as registrarse
+usecase (Menu) as menu
+usecase (Administrar perfil) as administrarperfil
+usecase (Gestionar citas) as gestionarcitas
+usecase (Buscar los servicios) as buscarservicios
+usecase (Realizar pagos) as realizarpagos
+
+cliente -right-> registrarse
+registrarse -right-> iniciarsesion
+iniciarsesion -right-> menu
+menu -down-> administrarperfil
+menu -down->gestionarcitas
+menu -down->buscarservicios
+menu -down-> realizarpagos
+
+
+
+@enduml

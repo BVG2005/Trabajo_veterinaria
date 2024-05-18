@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta Veterinaria</title>
+</head>
+<body>
+    <h1>Consulta Veterinaria</h1>
+    <img src="logo_sanmiguel.png" alt="Logo de Mi Empresa" style="position: absolute; top: 20px; right: 20px; width: 150px;">
+
+
+    <form action="schedule.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos de la mascota</legend>
+            <label for="nombre">Nombre de la mascota:</label><br>
+            <input type="text" id="nombre" name="nombre"><br><br>
+            
+            <label for="especie">Especie:</label><br>
+            <select id="especie" name="especie">
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="otro">Otro</option>
+            </select><br><br>
+            
+            <label for="raza">Raza:</label><br>
+            <input type="text" id="raza" name="raza"><br><br>
+            
+            <label for="fecha">Fecha de la consulta:</label><br>
+            <input type="date" id="fecha" name="fecha"><br><br>
+            
+            <label for="motivo">Motivo de la consulta:</label><br>
+            <select id="motivo" name="motivo">
+                <option value="vacunacion">Vacunación</option>
+                <option value="desparasitacion">Desparasitación</option>
+                <option value="consulta_general">Consulta General</option>
+                <option value="control_peso">Control de peso</option>
+                <option value="cuidados_dentales">Cuidados dentales</option>
+                <option value="control_parasitos">Control de parásitos</option>
+            </select><br><br>
+            
+            <label>Sexo:</label><br>
+            <input type="radio" id="macho" name="sexo" value="macho">
+            <label for="macho">Macho</label>
+            <input type="radio" id="hembra" name="sexo" value="hembra">
+            <label for="hembra">Hembra</label><br><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Datos del dueño</legend>
+            <label for="nombre_dueño">Nombre del dueño:</label><br>
+            <input type="text" id="nombre_dueño" name="nombre_dueño"><br><br>
+            
+            <label for="telefono">Teléfono del dueño:</label><br>
+            <input type="text" id="telefono" name="telefono"><br><br>
+            
+            <label for="email">Email del dueño:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+        </fieldset>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
